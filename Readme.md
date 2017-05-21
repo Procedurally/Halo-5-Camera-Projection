@@ -6,14 +6,15 @@ C# classes for projecting points and lines from Halo 5's world coordinate system
 
 ```C#
 
-// Create a camera using the data available in Halo 5's machinima mode.
+// Create a camera using the data available in Halo 5's machinima mode
 var camera = new Halo5Camera(new Vector3(X, Y, Z), Yaw, Pitch, Fov);
 
-// Collect event data from the Halo 5 API's "Match Events" endpoint.
+// Collect event data from the Halo 5 API's "Match Events" endpoint
 
 // Project event data to screen coordinates
 var projectedPoint = camera.Project(event.KillerWorldLocation);
 
+// Project a line between pairs of events
 var projectedLine = camera.Project(event.KillerWorldLocation, event.VictimWorldLocation);
 
 // Check the visibility of the result
@@ -29,4 +30,4 @@ This was created for an API hackathon run by 343 Industries. It is used to proje
 
 ## Installation
 
-The classed require Matrix, Vector and floating point math classes. Feel free to use your own or copy mine from my MathLib repository.
+These classes require additional Matrix, Vector and floating point math classes. Feel free to use your own or copy mine from my MathLib repository.
